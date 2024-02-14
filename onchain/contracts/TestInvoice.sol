@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 import "./BethToken.sol";
 // import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract BethelInvoice {
+contract BethelInvoiceTest {
     // Token contract
     BethToken public bethtoken;
 
@@ -171,15 +171,12 @@ contract BethelInvoice {
         return true;
     }
 
-    // TransferFrom() -> BethToken.symbol();
-    // 
-
     // Function that Pay to invoice created
     function payInvoice(string memory _did, Packages _package) public returns(bool success){
         uint256 cost = calculateStorageCost(_package);
 
         // Transfer tokens from the user to the contract
-        // bethtoken.transferFrom(msg.sender, address(this), cost);
+        bethtoken.transferFrom(msg.sender, address(this), cost);
 
         Invoice[] memory  invoices = users[_did].invoices;
 

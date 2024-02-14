@@ -3,7 +3,7 @@ const { ethers } = require('hardhat');
 async function main() {
   const [deployer] = await ethers.getSigners();
 
-  const CONTRACT_ADDRESS = '0xf0Cd523796bAadE09C9709aCe9B3a48464c1149D';
+  const CONTRACT_ADDRESS = '0xdfAFED304f463E509531c410f5ca68B27f8914e4';
 
   console.log('Deploying contracts with the account:', deployer.address);
 
